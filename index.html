@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock & Timer App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">Clock & Timer</h1>
+        
+        <div class="clocks-container">
+            <div class="digital-section">
+                <h2>Digital Clock</h2>
+                <div class="digital-time">00:00:00</div>
+            </div>
+            <div class="clock-section">
+                <h2>Analog Clock</h2>
+                <div class="clock">
+                    <div class="hand hour-hand"></div>
+                    <div class="hand minute-hand"></div>
+                    <div class="hand second-hand"></div>
+                    <div class="center-dot"></div>
+                    <div class="number number1">1</div>
+                    <div class="number number2">2</div>
+                    <div class="number number3">3</div>
+                    <div class="number number4">4</div>
+                    <div class="number number5">5</div>
+                    <div class="number number6">6</div>
+                    <div class="number number7">7</div>
+                    <div class="number number8">8</div>
+                    <div class="number number9">9</div>
+                    <div class="number number10">10</div>
+                    <div class="number number11">11</div>
+                    <div class="number number12">12</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timers-container">
+            <div class="stopwatch-section">
+                <h2>Stopwatch</h2>
+                <div class="stopwatch-display">00:00:00</div>
+                <div class="stopwatch-controls">
+                    <button id="startStopwatch">Start</button>
+                    <button id="stopStopwatch">Stop</button>
+                    <button id="resetStopwatch">Reset</button>
+                </div>
+            </div>
+
+            <div class="timer-section">
+                <h2>Timer</h2>
+                <div class="timer-input">
+                    <input type="number" id="minutes" placeholder="Minutes" min="0">
+                    <input type="number" id="seconds" placeholder="Seconds" min="0" max="59">
+                </div>
+                <div class="timer-display">00:00</div>
+                <div class="timer-controls">
+                    <button id="startTimer">Start</button>
+                    <button id="stopTimer">Stop</button>
+                    <button id="resetTimer">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

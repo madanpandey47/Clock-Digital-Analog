@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.main-heading {
+    grid-column: 1 / -1;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+}
+
+.clocks-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.clock-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 4px solid #fff;
+    position: relative;
+    margin: 0 auto 1rem;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    background: #fff;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 60px;
+    background: #ff6b6b;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 80px;
+    background: #4ecdc4;
+}
+
+.second-hand {
+    width: 2px;
+    height: 90px;
+    background: #45b7d1;
+}
+
+.center-dot {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.digital-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.digital-time {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 1rem;
+    font-family: 'Poppins', monospace;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.timers-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stopwatch-section, .timer-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.stopwatch-display, .timer-display {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.timer-input {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 80px;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    margin: 0.3rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+#startStopwatch, #startTimer {
+    background: #4ecdc4;
+}
+
+#stopStopwatch, #stopTimer {
+    background: #ff6b6b;
+}
+
+#resetStopwatch, #resetTimer {
+    background: #45b7d1;
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .clocks-container {
+        grid-template-columns: 1fr;
+    }
+
+    .timers-container {
+        grid-template-columns: 1fr;
+    }
+
+    .clock {
+        width: 200px;
+        height: 200px;
+    }
+
+    .digital-time {
+        font-size: 2rem;
+    }
+
+    .stopwatch-section, .timer-section {
+        padding: 1rem;
+    }
+
+    .timer-input {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    input {
+        width: 70px;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 1.8rem;
+    }
+
+    .clock {
+        width: 180px;
+        height: 180px;
+    }
+
+    .digital-time {
+        font-size: 1.8rem;
+    }
+
+    .stopwatch-display, .timer-display {
+        font-size: 1.8rem;
+    }
+
+    .timer-input {
+        flex-direction: column;
+    }
+
+    input {
+        width: 100%;
+    }
+} 
